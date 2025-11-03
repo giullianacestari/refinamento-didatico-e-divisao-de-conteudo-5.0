@@ -3,14 +3,6 @@ import { Lesson, LessonPlan, Descriptor, ToolsAndSites, SuggestedSite } from '..
 import { descriptorsBySkill } from '../data/descriptors';
 import { skillsWithDescriptions } from "../data/skillsWithDescriptions";
 
-const API_KEY = process.env.API_KEY;
-
-if (!API_KEY) {
-  throw new Error("API_KEY environment variable not set");
-}
-
-const ai = new GoogleGenAI({ apiKey: API_KEY });
-
 const model = 'gemini-2.5-flash';
 
 const descriptorSchema = {
@@ -100,6 +92,14 @@ const formatTitle = (title: string): string => {
 };
 
 export const generateLessonPlan = async (script: string, selectedSkills: string[]): Promise<LessonPlan> => {
+    const API_KEY = process.env.API_KEY;
+
+    if (!API_KEY) {
+      throw new Error("A chave da API do Google não foi configurada. Certifique-se de que a variável de ambiente API_KEY esteja definida no ambiente.");
+    }
+
+    const ai = new GoogleGenAI({ apiKey: API_KEY });
+    
     try {
         const relevantDescriptors: Descriptor[] = selectedSkills.flatMap(skillCode => descriptorsBySkill[skillCode] || []);
         const descriptorsText = relevantDescriptors.length > 0 
