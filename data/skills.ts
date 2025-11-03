@@ -1,0 +1,54 @@
+export const gradeOptions = [
+  '6º ano',
+  '7º ano',
+  '8º ano',
+  '9º ano',
+  '1ª série',
+  '2ª série',
+  '3ª série',
+] as const;
+
+export type Grade = typeof gradeOptions[number];
+
+export const skillsByGrade: Record<Grade, string[]> = {
+  '6º ano': [
+    'EF06C001', 'EF06C002', 'EF06C003', 'EF06C004', 
+    'EF06C005', 'EF06C006', 'EF06C007', 'EF06C008',
+  ],
+  '7º ano': [
+    'EF07C001', 'EF07C002', 'EF07C003', 'EF07C004', 
+    'EF07C005', 'EF07C006', 'EF07C007', 'EF07C008', 
+    'EF07C009', 'EF07C010', 'EF07C011',
+  ],
+  '8º ano': [
+    'EF08C001', 'EF08C002', 'EF08C003', 'EF08C004', 
+    'EF08C005', 'EF08C006', 'EF08C007', 'EF08C008', 
+    'EF08C009', 'EF08C010', 'EF08C011',
+  ],
+  '9º ano': [
+    'EF09C001', 'EF09C002', 'EF09C003', 'EF09C004', 
+    'EF09C005', 'EF09C006', 'EF09C007', 'EF09C008', 
+    'EF09C009', 'EF09C010',
+  ],
+  '1ª série': [
+    'EM13C001', 'EM13C002', 'EM13C003', 'EM13C004', 'EM13C005',
+    'EM13C006', 'EM13C007', 'EM13C008', 'EM13C009', 'EM13C010',
+    'EM13C011', 'EM13C012', 'EM13C013', 'EM13C014', 'EM13C015', 'EM13C016',
+    'EM13C017', 'EM13C018', 'EM13C019', 'EM13C020', 'EM13C021',
+    'EM13C022', 'EM13C023', 'EM13C024', 'EM13C025', 'EM13C026',
+  ],
+  '2ª série': [
+    'EM13C001', 'EM13C002', 'EM13C003', 'EM13C004', 'EM13C005',
+    'EM13C006', 'EM13C007', 'EM13C008', 'EM13C009', 'EM13C010',
+    'EM13C011', 'EM13C012', 'EM13C013', 'EM13C014', 'EM13C015', 'EM13C016',
+    'EM13C017', 'EM13C018', 'EM13C019', 'EM13C020', 'EM13C021',
+    'EM13C022', 'EM13C023', 'EM13C024', 'EM13C025', 'EM13C026',
+  ],
+  '3ª série': [
+    'EM13C001', 'EM13C002', 'EM13C003', 'EM13C004', 'EM13C005',
+    'EM13C006', 'EM13C007', 'EM13C008', 'EM13C009', 'EM13C010',
+    'EM13C011', 'EM13C012', 'EM13C013', 'EM13C014', 'EM13C015', 'EM13C016',
+    'EM13C017', 'EM13C018', 'EM13C019', 'EM13C020', 'EM13C021',
+    'EM13C022', 'EM13C023', 'EM13C024', 'EM13C025', 'EM13C026',
+  ],
+};
